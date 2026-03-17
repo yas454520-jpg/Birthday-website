@@ -1,0 +1,351 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Surprise</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+text-align:center;
+background:linear-gradient(135deg,#ffd6e7,#ffe8b6);
+overflow-x:hidden;
+}
+
+/* floating hearts */
+
+.heartbg{
+position:fixed;
+font-size:20px;
+animation:float 8s linear infinite;
+opacity:0.6;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+/* page system */
+
+.page{
+display:none;
+min-height:100vh;
+padding:30px;
+}
+
+.active{
+display:block;
+}
+
+/* PAGE 1 */
+
+#intro{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:linear-gradient(45deg,#ff4e8a,#ff8fab);
+color:white;
+}
+
+.introTitle{
+font-family:'Dancing Script',cursive;
+font-size:60px;
+}
+
+#timer{
+font-size:80px;
+margin-top:20px;
+}
+
+/* button */
+
+.next{
+margin-top:30px;
+padding:14px 30px;
+font-size:18px;
+background:#ff4e8a;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.next:hover{
+transform:scale(1.05);
+}
+
+/* banner */
+
+.banner img{
+width:90%;
+max-width:700px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* photos */
+
+.photos{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.photos img{
+width:200px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.msg{
+max-width:700px;
+margin:auto;
+margin-top:25px;
+line-height:1.8;
+font-size:18px;
+}
+
+/* PAGE 4 */
+
+.title{
+font-family:'Great Vibes',cursive;
+font-size:65px;
+color:#b30059;
+}
+
+.container{
+position:relative;
+width:500px;
+height:450px;
+margin:auto;
+}
+
+/* BIG HEART IMAGE */
+
+.heart{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+width:320px;
+height:320px;
+animation:beat 1.5s infinite;
+}
+
+.heart img{
+width:100%;
+height:100%;
+object-fit:cover;
+clip-path: path("M160 290 C40 180, 0 80, 80 50 C120 30, 160 70, 160 100 C160 70, 200 30, 240 50 C320 80, 280 180, 160 290 Z");
+opacity:0;
+transition:0.5s;
+filter: drop-shadow(0 0 20px #ff4d6d);
+}
+
+/* animation */
+
+@keyframes beat{
+0%{transform:translate(-50%,-50%) scale(1);}
+50%{transform:translate(-50%,-50%) scale(1.08);}
+100%{transform:translate(-50%,-50%) scale(1);}
+}
+
+/* sunflower */
+
+.flower{
+position:absolute;
+font-size:60px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.flower:hover{
+transform:scale(1.4);
+}
+
+/* sunflower layout */
+
+.f1{top:-25px; left:210px;}
+.f2{top:50px; left:400px;}
+.f3{top:155px; left:370px;}
+.f4{top:240px; left:300px;}
+.f5{top:310px; left:210px;}
+
+.f6{top:240px; left:120px;}
+.f7{top:155px; left:50px;}
+.f8{top:50px; left:15px;}
+.f9{top:-25px; left:90px;}
+.f10{top:-40px; left:330px;}
+
+.message{
+margin-top:25px;
+font-size:22px;
+color:#7a004c;
+}
+
+/* final message */
+
+.final{
+max-width:800px;
+margin:auto;
+line-height:1.9;
+font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- floating hearts -->
+
+<div class="heartbg" style="left:10%">❤️</div>
+<div class="heartbg" style="left:30%;animation-delay:2s">💖</div>
+<div class="heartbg" style="left:60%;animation-delay:4s">💕</div>
+<div class="heartbg" style="left:80%;animation-delay:1s">💗</div>
+
+<!-- PAGE 1 -->
+
+<div id="page1" class="page active">
+<div id="intro">
+<div class="introTitle">🎁 A Little Surprise For You 🎁</div>
+<div style="font-size:25px;margin-top:20px;">
+🌻💖✨ Something Special Is Coming ✨💖🌻
+</div>
+<div id="timer">10</div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+
+<div id="page2" class="page banner">
+<h2 style="font-family:'Dancing Script';font-size:50px;color:#b30059;">
+For Disha ❤️
+</h2>
+<img src="banner.jpg.jpeg">
+<button class="next" onclick="nextPage(3)">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+
+<div id="page3" class="page">
+<div class="photos">
+<img src="photo11.jpg.jpeg">
+<img src="photo12.jpg.jpeg">
+</div>
+
+<div class="msg">
+On your birthday I just want to say thank you for always being there for me.  
+Your presence makes life brighter and happier.  
+You are someone truly special and I feel lucky to have you in my life ❤️
+</div>
+
+<button class="next" onclick="nextPage(4)">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+
+<div id="page4" class="page">
+
+<div class="title">Happy Birthday Dishudaa ❤️</div>
+
+<div class="container">
+
+<div class="heart">
+<img id="photo">
+</div>
+
+<div class="flower f1" onclick="show(1)">🌻</div>
+<div class="flower f2" onclick="show(2)">🌻</div>
+<div class="flower f3" onclick="show(3)">🌻</div>
+<div class="flower f4" onclick="show(4)">🌻</div>
+<div class="flower f5" onclick="show(5)">🌻</div>
+<div class="flower f6" onclick="show(6)">🌻</div>
+<div class="flower f7" onclick="show(7)">🌻</div>
+<div class="flower f8" onclick="show(8)">🌻</div>
+<div class="flower f9" onclick="show(9)">🌻</div>
+<div class="flower f10" onclick="show(10)">🌻</div>
+
+</div>
+
+<div class="message">
+March is all about you ❤️
+</div>
+
+<button class="next" onclick="nextPage(5)">Next</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div id="page5" class="page">
+
+<div class="final">
+
+<h2 style="font-family:'Great Vibes';font-size:55px;color:#b30059;">
+Happy Birthday Beautiful ❤️
+</h2>
+
+<p>
+Today the world became brighter because you were born.  
+You are someone who brings happiness, warmth and love into my life.
+I wish that every dream you have comes true and that life always gives you reasons to smile.
+Thank you for being such an amazing part of my life.
+Happy Birthday once again ❤️
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* countdown */
+
+let time=10;
+
+let countdown=setInterval(function(){
+document.getElementById("timer").innerText=time;
+time--;
+if(time<0){
+clearInterval(countdown);
+nextPage(2);
+}
+},1000);
+
+/* navigation */
+
+function nextPage(num){
+document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+document.getElementById("page"+num).classList.add("active");
+}
+
+/* sunflower photo */
+
+function show(num){
+let img=document.getElementById("photo");
+img.style.opacity=0;
+
+setTimeout(()=>{
+img.src="photo"+num+".jpg.jpeg";
+img.style.opacity=1;
+},200);
+}
+
+</script>
+
+</body>
+</html>
+```
